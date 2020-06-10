@@ -1,4 +1,4 @@
-PPImage title, gameover, gamewin, startNormal, startHovered, restartNormal, restartHovered;
+PImage title, gameover, gamewin, startNormal, startHovered, restartNormal, restartHovered;
 PImage groundhogIdle, groundhogLeft, groundhogRight, groundhogDown;
 PImage bg, life, cabbage, soilEmpty, clock, caution, sweethome;
 PImage soldier, robot, dinosaur;
@@ -169,8 +169,13 @@ void initGame(){
 		// 	- Randomly decide if a cabbage or a clock should appear in a random soil every 4 rows (6 items in total)
 		// 	- Create and store cabbages/clocks in the same items array
 		// 	- You can use the above newX/newY to set their position in constructor
+  if(random(1)>0.5){
   items[i] = new Cabbage(newX,newY) ;
 	}
+  else {
+  items[i] = new Clock(newX, newY);
+}
+}
 }
 
 void draw() {
