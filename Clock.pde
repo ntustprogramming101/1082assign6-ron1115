@@ -13,11 +13,11 @@ class Clock extends Item{
   }
 			// Check collision with player
    void checkCollision(Player player){
-		    if(isHit(x, y, SOIL_SIZE, SOIL_SIZE, player.x, player.y, player.w, player.h)){
+		    if(isAlive == true && isHit(x, y, SOIL_SIZE, SOIL_SIZE, player.x, player.y, player.w, player.h)){
 
-				addTime(CLOCK_BONUS_SECONDS);
+				
 		    isAlive = false ; // Now that they're objects, toggle isAlive instead of throwing them away from screen
-
+        addTime(CLOCK_BONUS_SECONDS);
 			}
    }
 
